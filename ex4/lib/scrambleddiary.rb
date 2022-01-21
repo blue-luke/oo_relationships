@@ -27,6 +27,15 @@ class ScrambledDiary
     @contents = @contents.reverse
   end
 
+  def scramble(method)
+    new_content = method.scramble(@contents)
+    @contents = new_content
+  end
+
+  # def scramble_by_reversing
+  #   @contents = @contents.reverse
+  # end
+
   def unscramble_by_reversing
     @contents = @contents.reverse
   end
