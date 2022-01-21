@@ -3,11 +3,11 @@ class User
     @name = name
     @bio = bio
     @age = age
-    @user_password = user_password
+    @authenticator = Authenticate.new(@user_password)
   end
 
   def authenticate(suggested_password)
-    suggested_password == @user_password
+    @authenticator.check(suggested_password)
   end
 
   def profile
